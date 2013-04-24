@@ -1,0 +1,11 @@
+/** styles.styl */
+.first {
+  background-color: #f00;
+  font-size: 12px;
+  font-color: #00f;
+  line-height: 13px;
+}
+.second:after {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
