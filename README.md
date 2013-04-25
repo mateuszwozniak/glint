@@ -138,58 +138,35 @@ module.exports = {
 
 ```
 
-###Run Glint
-```javascript
-./node_modules/.bin/glint --config path/to/config/file.js
+
+##Glint options
+You can pass following options to glint
+- `-c, --config path/to/config/file.js` - specify configuration file
+- `-w, --watch` - watch for changes in files and rebuild suitable packages immediately after change
+- `-d, --dev` - use development mode - don't merge files, only preprocess them and copy to output/sources location.
+
+
+##What exactly glint does
+When you run glint a several things happen:
+
+1. glint collects files for packages, and builds files lists for final packages
+2. for all files glint runs preprocessors to create desired file content
+3. for all final packages glint merges files
+4. for all final packages glint runs postprocessors
+5. all files from final packages are written to following directories
 ```
-This will create your packages, preprocess and postprocess them, save them to output directories and create manifest.json file.
-Now you have your packages ready to use. You just have to use them in your application
-
-###Using packages with express.js
-```javascript
-// file clientlibs/config.js
-module.exports = {
-    assetsDir: 'assets',
-    outputDir: 'output',
-    manifest: 'output/manifest.json',
-    packages: [
-        {
-            name: 'gallery',
-            final: true,
-            files: [
-                'gallery.css',
-                'jquery.js',
-                'gallery.js'
-            ]
-        }
-    ]
-};
+--output // <- directory you passed as outputDir in configuration file
+ |
+ |--build // directory that holds build (preprocessed, merged and postprocessed files)
+ | |--css // css files and files that were preprocessed to css files (e.g. stylus files)
+ | |--js  // js files and files that were preprocessed to js files (e.g. jade)
+ |
+ |--sources // directory that holds preprocessed files (not merged, for development usage)
+ | |--css // css files and files that were preprocessed to css files (e.g. stylus files)
+ | |--js  // js files and files that were preprocessed to js files (e.g. jade)
 
 ```
 
-```javascript
-// file server.js
-
-var express = require('express');
-
-// import glint adapter for express
-var glintForExpress = require('glint').adapters.express;
-
-var app = express();
-// add glint to express application
-app.use(glintForExpress('output/mainfest.json'));
-
-app.get('/', function (req, res) {
-    // now you have assets variable in res.locals
-    // you can access final packages via package_name.files_category
-    var body = '<html><head>' + res.locals.assets.gallery.css + '</head><body>' + res.locals.assets.gallery.js + '</body></html>';
-    res.setHeader('Content-Type', 'text/html');
-    res.setHeader('Content-Length', body.length);
-    res.end(body);
-});
-
-app.listen(3000);
-console.log('Listening on port 3000');
-```
+####! This documentation is not complete so if you need any help don't hesitate to contact me (mail is inside package.json) !
 
 TBC...
