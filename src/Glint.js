@@ -18,6 +18,8 @@ function Glint(config) {
     var processedFiles;
     var fileProcessor;
     var finalPackages;
+    var files;
+    var index;
 
     this.run = run;
 
@@ -34,8 +36,8 @@ function Glint(config) {
         console.log('[INFO] Building file indexes');
         var indexBuilder = new IndexBuilder(finalPackages);
         indexBuilder.build();
-        var index = indexBuilder.getIndex();
-        var files = indexBuilder.getFileList();
+        index = indexBuilder.getIndex();
+        files = indexBuilder.getFileList();
 
         console.log('[INFO] Processing files');
         fileProcessor = new FileProcessor(files, config);

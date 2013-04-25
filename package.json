@@ -1,6 +1,6 @@
 {
     "name": "glint",
-    "version": "0.0.11",
+    "version": "0.0.13",
     "author": "Mateusz Wozniak <mateusz@wozniak.io>",
     "description": "Glint is an asset (css, js, whatever-you-need) management that helps you organize and manage your client side files",
     "keywords": ["packer", "build", "compress", "glint", "assets"],
