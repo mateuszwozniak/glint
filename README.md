@@ -4,6 +4,11 @@ It helps you better organize files you serve to browser, as well as process them
 
 For now it works with express.js but you can simply adjust it to your project and technology.
 
+####! This documentation is not complete so if you need any help don't hesitate to contact me (mail is inside package.json) !
+
+Checkout examples [here](https://github.com/mateuszwozniak/glint-examples/)
+
+
 ##Features:
 - creating named 'packages' from your assets (e.g. jquery-ui, my-tools, etc.)
 - merging, processing, compressing files for production environment
