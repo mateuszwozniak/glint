@@ -14,7 +14,10 @@ module.exports = {
     preprocessors: {
         styl: stylus,
         jade: jade,
-        scss: scss
+        scss: {
+            fn: scss,
+            options: {}
+        }
     },
     postprocessors: {
         css: [cleanCss],

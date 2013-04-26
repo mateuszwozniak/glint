@@ -60,7 +60,7 @@ function FileProcessor(files, config) {
 
         if (typeof processor === 'function') {
             processorFn = processor;
-        } else if (processor.fn === 'function') {
+        } else if (typeof processor === 'object' && typeof processor.fn === 'function') {
             processorFn = processor.fn;
             processorOptions = processor.options || {};
         } else {
@@ -73,7 +73,7 @@ function FileProcessor(files, config) {
                 process.exit(-1);
             }
 
-            storeProcessedFile(output, filePath, processor.outputExtension);
+            storeProcessedFile(output, filePath, processorFn.outputExtension);
             typeof cb === 'function' && cb();
         });
     }
