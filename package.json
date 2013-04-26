@@ -1,6 +1,6 @@
 {
     "name": "glint",
-    "version": "0.0.22",
+    "version": "0.0.23",
     "author": "Mateusz Wozniak <mateusz@wozniak.io>",
     "description": "Glint is an asset (css, js, whatever-you-need) management that helps you organize and manage your client side files",
     "keywords": ["packer", "build", "compress", "glint", "assets"],
@@ -25,7 +25,7 @@
         "url": "git://github.com/mateuszwozniak/glint.git"
     },
     "engines": {
-        "node": ">= 0.4.0"
+        "node": ">= 0.10.0"
     },
     "scripts": {
         "test": "./node_modules/.bin/mocha --timeout 5000 --reporter spec test/*.js test/unit/*.js test/e2e/*.js"
