@@ -7,6 +7,7 @@ module.exports =  [
         "files": [
             path.join(cwd, "test/fixtures/assets/template.jade"),
             path.join(cwd, "test/fixtures/assets/styles.styl"),
+            path.join(cwd, "test/fixtures/assets/template.scss"),
             path.join(cwd, "test/fixtures/assets/gallery.js"),
             path.join(cwd, "test/fixtures/assets/gallery.css")
         ]

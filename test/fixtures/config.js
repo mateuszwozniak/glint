@@ -1,6 +1,7 @@
 var preprocessors = require('../../').preprocessors;
 var jade = preprocessors.jade;
 var stylus = preprocessors.stylus;
+var scss = preprocessors.scss;
 
 var postprocessors = require('../../').postprocessors;
 var cleanCss = postprocessors['clean-css'];
@@ -12,7 +13,8 @@ module.exports = {
     manifest: 'output/manifest.json',
     preprocessors: {
         styl: stylus,
-        jade: jade
+        jade: jade,
+        scss: scss
     },
     postprocessors: {
         css: [cleanCss],
@@ -41,7 +43,8 @@ module.exports = {
             final: false,
             files: [
                 'template.jade',
-                'styles.styl'
+                'styles.styl',
+                'template.scss'
             ]
         }
     ]

@@ -83,7 +83,7 @@ module.exports = {
 
 ###Preprocessors
 Preprocessors are functions that will receive raw content of your files, and will generate from this content final file content (e.g. generate css files from stylus files).
-For now jade and stylus are supported.
+#####For now jade, stylus and scss are supported.
 Definition looks like this:
 ```javascript
 var preprocessors = require('glint').preprocessors;

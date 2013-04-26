@@ -3,6 +3,7 @@ module.exports = {
         gallery: {
             css: [
                 "sources/css/styles.styl.css",
+                "sources/css/template.scss.css",
                 "sources/css/gallery.css"
             ],
             js: [
