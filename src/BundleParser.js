@@ -16,7 +16,7 @@ function BundleParser(rawBundle, assetsDir) {
     }
 
     function updateFilesPathsInPackage(pkg) {
-        var files = pkg.files.map(function updateFilePath(filePath) {
+        var files = (pkg.files || []).map(function updateFilePath(filePath) {
             var pth = path.join(assetsDir, filePath);
             return path.normalize(pth);
         });
