@@ -30,7 +30,7 @@ function initConfig() {
     try {
         config = require(absConfigPath);
     } catch (ex) {
-        console.log('[ERROR] Can not open config file: ', configPath);
+        console.log('[ERROR] Can not open config file: ', program.config);
         process.exit(-1);
     }
 
