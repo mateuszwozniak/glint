@@ -154,7 +154,8 @@ When you run glint a several things happen:
 3. for all final packages glint merges files
 4. for all final packages glint runs postprocessors
 5. all files from final packages are written to following directories
-```
+
+```javascript
 --output // <- directory you passed as outputDir in configuration file
  |
  |--build // directory that holds build (preprocessed, merged and postprocessed files)
